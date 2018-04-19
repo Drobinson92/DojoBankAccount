@@ -1,0 +1,21 @@
+﻿@model bankaccounts.Models.UserViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Register</h2>
+<a asp-action="LoginPage">Already registered?</a>
+<form asp-action="Register" method="POST">
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName"><br>
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName"><br>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"><br>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"><br>
+    <label asp-for="PasswordCheck"></label>
+    <input asp-for="PasswordCheck"><br>
+    <input type='submit' value="Register">
+</form>
+<div asp-validation-summary="All"></div>

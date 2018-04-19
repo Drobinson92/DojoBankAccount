@@ -1,0 +1,21 @@
+@model bankaccounts.Models.Transaction
+<h2>Transactions Home</h2>
+<button><a asp-action="Logout">Logout</a></button>
+<h3>Welcome, @ViewBag.u.FirstName</h3>
+<h5>Current Balance: $@ViewBag.u.Balance</h5>
+<form asp-action="Transact" method="POST">
+    <label asp-for="Amount"></label>
+    <input type='number' asp-for="Amount">
+    <input type='submit' value='Submit'>
+</form>
+<div asp-validation-summary="All"></div>
+<table>
+    <th>Amount</th>
+    <th>Date</th>
+    @foreach(var t in ViewBag.u.Transactions){
+        <tr>
+            <td>@t.Amount</td>
+            <td>@t.CreatedAt.ToString("MMM dd, yyyy")</td>
+        </tr>
+    }
+</table>

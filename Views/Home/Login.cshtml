@@ -1,0 +1,10 @@
+@model bankaccounts.Models.LoginViewModel
+<h2>Login</h2>
+<a asp-action="Index">Need to register?</a>
+<form asp-action="Login" method="POST">
+    <label asp-for="Email"></label>
+    <input asp-for="Email"><br>
+    <label asp-for="Password"></label>
+    <input type='password' asp-for="Password">
+    <input type='submit' value='Login'>
+</form>
